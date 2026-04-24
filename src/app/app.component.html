@@ -1,0 +1,21 @@
+<app-header></app-header>
+<main>
+    <ul id="courses">
+    @for (course of courses; track course.id) {
+      <li>
+            <app-course
+        [course]="course"
+        [selected]="course.id === selectedCourseId"
+        (select)="onSelectCourse($event)"/>
+    </li>
+    }
+    
+  </ul>
+
+  @if (selectedCourse) {
+    <app-lessons [courseId]="selectedCourse.id" [name]="selectedCourse.name"/>
+  } @else {
+      <p id="fallback">Select a course to see more lessons</p>
+
+  }
+</main>

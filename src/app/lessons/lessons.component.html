@@ -1,0 +1,21 @@
+@if (isAddingLesson) {
+    <app-new-lesson [courseId]="courseId" (close)="onCloseAddLesson()"></app-new-lesson>
+}
+
+<section id="lessons">
+    <header>
+        <h2>{{name}}'s Lessons</h2>
+        <menu>
+            <button (click)="onStartAddLesson()">Add Lesson</button>
+        </menu>
+    </header>
+
+
+<ul>
+    @for (lesson of selectedCourseLessons; track lesson.id)
+    {
+    <li>
+        <app-lesson [lesson]="lesson"></app-lesson>
+    </li>
+    }
+</ul>

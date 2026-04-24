@@ -1,0 +1,8 @@
+<app-card>
+  <button [class.active]="selected" (click)="onSelectCourse()">
+    <div class="logo">
+      <img [src]="imagePath" [alt]="course.name" />
+    </div>
+    <span>{{ course.name }}</span>
+  </button>
+</app-card>

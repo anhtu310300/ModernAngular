@@ -1,0 +1,13 @@
+<app-card>
+<article>
+    <h2>{{lesson.title}}</h2>
+    <time>{{lesson.dueDate | date: 'short'}}</time>
+    <p>{{lesson.summary}}</p>
+    <a [href]="lesson.url" target="_blank">
+        {{ lesson.url }}
+    </a>
+    <p class="actions">
+        <button (click)="onCompleteLesson()">Complete</button>
+    </p>
+</article>
+</app-card>
